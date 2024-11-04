@@ -1,0 +1,86 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+section#dashboard {
+  margin: 20px;
+  text-align: center;
+}
+
+section#dashboard p {
+  font-size: 1.2rem;
+}
+
+/* General Layout for Tables */
+#financialInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.table-container {
+  flex: 1 1 45%; /* Allows two tables per row on larger screens */
+  min-width: 300px;
+  margin-bottom: 20px; /* Space below each container */
+}
+
+/* Table Title Styling */
+h2 {
+  text-align: left;
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0 0 5px;
+}
+
+/* General Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .table-container {
+    flex: 1 1 100%; /* Stacks tables vertically on smaller screens */
+  }
+  table,
+  th,
+  td {
+    font-size: 0.9rem;
+  }
+}

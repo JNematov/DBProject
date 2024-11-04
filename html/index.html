@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>home</title>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <form class="form">
+      <div class="username">
+        <p>Username</p>
+        <input type="text" name="username" id="username" />
+      </div>
+      <div class="password">
+        <p>Password</p>
+        <input type="text" name="password" id="password" />
+        <p id="errorMessage" style="color: red; display: none">
+          Password cannot contain ' or -
+        </p>
+      </div>
+      <input type="submit" value="submit" />
+    </form>
+
+    <!-- javascript -->
+    <script src="/js/index.js"></script>
+  </body>
+</html>

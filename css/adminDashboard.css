@@ -1,0 +1,98 @@
+/* General Page Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 20px 0;
+  color: #4caf50;
+}
+
+h2 {
+  color: #333;
+  font-size: 1.5rem;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+/* Table Container */
+.table-container {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Action Button Styling */
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .table-container {
+    width: 90%;
+  }
+
+  table,
+  th,
+  td {
+    font-size: 0.9rem;
+  }
+}

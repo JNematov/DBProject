@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client Dashboard</title>
+    <link rel="stylesheet" href="/css/clientDashboard.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Client Dashboard</h1>
+    </header>
+    <section id="dashboard">
+      <button><a href="clientProfile.html">Change Profile</a></button>
+      <button><a href="transactionInput.html">Make Transaction</a></button>
+      <h2>Financial Summary</h2>
+      <p id="income">Income: $0</p>
+      <p id="expenses">Expenses: $0</p>
+      <p id="budget">Budget Status: N/A</p>
+      <section id="financialInfo">
+        <div>
+          <div class="table-container">
+            <h2>Your Loans</h2>
+        <div id="loansTable"></div>
+          </div>
+
+        <div class="table-container">
+        <h2>Your Credit Cards</h2>
+        <div id="creditCardsTable"></div>
+        </div>
+
+        <div class="table-container">
+        <h2>Your Accounts</h2>
+        <div id="accountsTable"></div>
+        </div>
+
+        <div class="table-container">
+        <h2>Transactions</h2>
+        <div id="transactionsTable"></div>
+        </div>
+      </section>
+    </section>
+    <script src="/js/clientDashboard.js"></script>
+  </body>
+</html>
