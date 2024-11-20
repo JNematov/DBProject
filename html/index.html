@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>home</title>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <form class="form" action="/php/controllers/readAccount.php">
+      <h1>Login admin or client</h1>
+      <div class="username">
+        <p>Username</p>
+        <input type="text" name="username" id="username" />
+      </div>
+      <div class="password">
+        <p>Password</p>
+        <input type="text" name="password" id="password" />
+        <p id="errorMessage" style="color: red; display: none">
+          Password cannot contain ' or -
+        </p>
+      </div>
+      <input type="submit" value="login" />
+      <button
+        type="button"
+        onclick="window.location.href='registerClient.html';"
+      >
+        Signup
+      </button>
+    </form>
+
+    <!-- javascript -->
+    <script src="/js/index.js"></script>
+  </body>
+</html>

@@ -16,7 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const password = passwordInput.value;
 
       // Check if password contains invalid characters
-      if (password.includes("'") || password.includes("-")) {
+      if (
+        password.includes("'") ||
+        password.includes("-") ||
+        password.includes("#") ||
+        password.includes("=") ||
+        password.includes('"')
+      ) {
         errorMessage.style.display = "block"; // Show error message
       } else {
         errorMessage.style.display = "none"; // Hide error message

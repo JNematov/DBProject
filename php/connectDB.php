@@ -1,30 +1,30 @@
 <?php
-$host = 'g6-bankdb.mysql.database.azure.com'; // Your database host
-$dbname = 'bankdb'; // Your database name
-$username = 'G6_Admin'; // Your database username
-$password = 'admin@utdallasg6'; // Your database password
+$host = 'g6-bankdb.mysql.database.azure.com';
+$dbname = 'bankdb';
+$username = 'G6_Admin';
+$password = 'admin@utdallasg6';
 
 // Create a connection
-$conn = new mysqli($host, $username, $password, $dbname);
 
-// Check the connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+$conn = mysqli_connect($host, $username, $password, $dbname);
+
 
 // Query to fetch the Account_ID
-$sql = "SELECT * FROM customer;";
-$result = $conn->mysqli_query($conn, $sql);
+$sql = "SELECT * FROM loan";
+$result = $conn->query($sql);
 
-if (mysqli_num_rows($result) > 0) {
-    // Fetch and display results
-    $row = $result->mysqli_fetch_assoc($result);
-    echo $row["Name"] . "<br>";
-    
+if (!$result) {
+    die("Query failed: " . $conn->error);
+}
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo "ID: " . $row["Loan_ID"] . "<br>";
+    }
 } else {
-    echo "Error in query: " . $conn->error;
+    echo "0 results<br>";
 }
 
 // Close the connection
 $conn->close();
-?>
+?> 
