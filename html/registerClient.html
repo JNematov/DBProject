@@ -5,20 +5,24 @@
     <link rel="stylesheet" href="/css/index.css" />
   </head>
   <body>
-    <form class="form" action="/php/controllers/createAccount.php">
-      <h1>Login admin or client</h1>
+    <form
+      class="form"
+      action="/php/controllers/createAccount.php"
+      method="POST"
+    >
+      <h1>Create an Account</h1>
       <div class="username">
         <p>Username</p>
-        <input type="text" name="username" id="username" />
+        <input type="text" name="username" id="username" required />
       </div>
       <div class="password">
         <p>Password</p>
-        <input type="text" name="password" id="password" />
+        <input type="password" name="password" id="password" required />
         <p id="errorMessage" style="color: red; display: none">
           Password cannot contain ',-,#,=, or "
         </p>
       </div>
-      <input type="submit" value="sign up" />
+      <button type="submit">Signup</button>
     </form>
 
     <!-- javascript -->
