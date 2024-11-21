@@ -3,31 +3,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (form) {
     form.addEventListener("submit", (event) => {
-      event.preventDefault(); // Prevent the form from submitting
-      const passwordInput = document.getElementById("password");
-      const errorMessage = document.getElementById("errorMessage");
+      let isValid = true;
+      const invalidChars = ["'", ",", "-", "#", "=", '"'];
 
-      // Check if elements are found
-      if (!passwordInput || !errorMessage) {
-        console.error("Password input or error message element is missing.");
-        return;
+      // Username validation
+      const usernameInput = document.getElementById("username");
+      const usernameError = document.getElementById("usernameError");
+      if (invalidChars.some((char) => usernameInput.value.includes(char))) {
+        isValid = false;
+        usernameError.style.display = "block";
+      } else {
+        usernameError.style.display = "none";
       }
 
-      const password = passwordInput.value;
-
-      // Check if password contains invalid characters
-      if (
-        password.includes("'") ||
-        password.includes("-") ||
-        password.includes("#") ||
-        password.includes("=") ||
-        password.includes('"')
-      ) {
-        errorMessage.style.display = "block"; // Show error message
+      // Password validation
+      const passwordInput = document.getElementById("password");
+      const passwordError = document.getElementById("passwordError");
+      if (invalidChars.some((char) => passwordInput.value.includes(char))) {
+        isValid = false;
+        passwordError.style.display = "block";
       } else {
-        errorMessage.style.display = "none"; // Hide error message
-        // Redirect to client dashboard
-        window.location.href = "/html/clientDashboard.html";
+        passwordError.style.display = "none";
+      }
+
+      if (!isValid) {
+        event.preventDefault(); // Prevent the form from submitting
       }
     });
   } else {

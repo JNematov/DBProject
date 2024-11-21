@@ -8,23 +8,7 @@ $password = 'admin@utdallasg6';
 
 $conn = mysqli_connect($host, $username, $password, $dbname);
 
-
-// Query to fetch the Account_ID
-$sql = "SELECT * FROM loan";
-$result = $conn->query($sql);
-
-if (!$result) {
-    die("Query failed: " . $conn->error);
+if ($conn->connect_error) {
+    die('Connection failed: ' . $conn->connect_error);
 }
-
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "ID: " . $row["Loan_ID"] . "<br>";
-    }
-} else {
-    echo "0 results<br>";
-}
-
-// Close the connection
-$conn->close();
 ?> 

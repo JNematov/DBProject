@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>home</title>
+    <title>Home</title>
     <link rel="stylesheet" href="/css/index.css" />
   </head>
   <body>
-    <form class="form" action="/php/controllers/readAccount.php">
-      <h1>Login admin or client</h1>
+    <form class="form" action="/php/readAccount.php" method="POST">
+      <h1>Login</h1>
       <div class="username">
         <p>Username</p>
-        <input type="text" name="username" id="username" />
-      </div>
-      <div class="password">
-        <p>Password</p>
-        <input type="text" name="password" id="password" />
-        <p id="errorMessage" style="color: red; display: none">
-          Password cannot contain ' or -
+        <input type="text" name="username" id="username" required />
+        <p id="usernameError" style="color: red; display: none">
+          Error: Username cannot contain ', -, #, =, or "
         </p>
       </div>
-      <input type="submit" value="login" />
+
+      <div class="password">
+        <p>Password</p>
+        <input type="password" name="password" id="password" required />
+        <p id="passwordError" style="color: red; display: none">
+          Error: Password cannot contain ', -, #, =, or "
+        </p>
+      </div>
+      <input type="submit" value="Login" />
       <button
         type="button"
         onclick="window.location.href='registerClient.html';"
@@ -27,7 +31,7 @@
       </button>
     </form>
 
-    <!-- javascript -->
+    <!-- JavaScript -->
     <script src="/js/index.js"></script>
   </body>
 </html>

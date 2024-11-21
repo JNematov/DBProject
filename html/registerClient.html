@@ -1,31 +1,81 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>home</title>
+    <title>Create Account</title>
     <link rel="stylesheet" href="/css/index.css" />
   </head>
   <body>
-    <form
-      class="form"
-      action="/php/controllers/createAccount.php"
-      method="POST"
-    >
+    <form class="form" action="/php/createAccount.php" method="POST">
       <h1>Create an Account</h1>
+
+      <div class="socials">
+        <p>Social Security Number</p>
+        <input type="number" name="social" id="social" required />
+        <p id="socialError" style="color: red; display: none">
+          Error: Cannot contain ', -, #, =, or "
+        </p>
+      </div>
+
+      <div class="name">
+        <p>Name</p>
+        <input type="text" name="name" id="name" required />
+        <p id="nameError" style="color: red; display: none">
+          Error: Cannot contain ', -, #, =, or "
+        </p>
+      </div>
+
+      <div class="address">
+        <p>Address</p>
+        <input type="text" name="address" id="address" required />
+        <p id="addressError" style="color: red; display: none">
+          Error: Cannot contain ', -, #, =, or "
+        </p>
+      </div>
+
+      <div class="phonenumber">
+        <p>Phone Number</p>
+        <input type="text" name="phonenumber" id="phonenumber" required />
+        <p id="phoneError" style="color: red; display: none">
+          Error: Cannot contain ', -, #, =, or "
+        </p>
+      </div>
+
+      <div class="email">
+        <p>Email</p>
+        <input type="email" name="email" id="email" required />
+        <p id="emailError" style="color: red; display: none">
+          Error: Cannot contain ', -, #, =, or "
+        </p>
+      </div>
+
+      <div class="dateofbirth">
+        <p>Date of Birth</p>
+        <input type="date" name="dateofbirth" id="dateofbirth" required />
+        <p id="dobError" style="color: red; display: none">
+          Error: Please select a valid date.
+        </p>
+      </div>
+
       <div class="username">
         <p>Username</p>
         <input type="text" name="username" id="username" required />
+        <p id="usernameError" style="color: red; display: none">
+          Error: Cannot contain ', -, #, =, or "
+        </p>
       </div>
+
       <div class="password">
         <p>Password</p>
         <input type="password" name="password" id="password" required />
-        <p id="errorMessage" style="color: red; display: none">
-          Password cannot contain ',-,#,=, or "
+        <p id="passwordError" style="color: red; display: none">
+          Password cannot contain ', -, #, =, or "
         </p>
       </div>
+
       <button type="submit">Signup</button>
     </form>
 
-    <!-- javascript -->
-    <!-- <script src="/js/index.js"></script> -->
+    <!-- JavaScript -->
+    <script src="/js/registerClient.js"></script>
   </body>
 </html>
